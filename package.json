@@ -1,8 +1,8 @@
 {
   "name": "matestack-ui-bootstrap-beta",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "license": "MIT",
-  "main": "./dist/material-ui-bootstrap.js",
+  "main": "./lib/matestack/ui/bootstrap/index.js",
   "module": "./dist/material-ui-bootstrap.js",
   "scripts": {
     "build": "node build.js"
@@ -10,6 +10,8 @@
   "files": [
     "lib/**/*.js",
     "lib/**/*.scss",
+    "dist/**/*.css",
+    "dist/**/*.js",
     "LICENSE"
   ],
   "dependencies": {
@@ -30,6 +32,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "exports": {
-    ".": "./lib/matestack/ui/bootstrap/index.js"
+    ".": "./dist/material-ui-bootstrap.js"
   }
 }
