@@ -1,17 +1,17 @@
 {
   "name": "matestack-ui-bootstrap-beta",
-  "version": "2.1.6",
+  "version": "2.1.12",
   "license": "MIT",
   "main": "./lib/matestack/ui/bootstrap/index.js",
   "module": "./dist/material-ui-bootstrap.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "lint": "yarn eslint --fix --ext .js --ext .js lib .eslintrc.js",
+    "publish": "npm publish"
   },
   "files": [
-    "lib/**/*.js",
-    "lib/**/*.scss",
-    "dist/**/*.css",
     "dist/**/*.js",
+    "dist/**/*.scss",
     "LICENSE"
   ],
   "dependencies": {
@@ -20,7 +20,8 @@
     "bootstrap": "^5.0.0",
     "link-module-alias": "^1.2.0",
     "matestack-ui-core": "^2.1.0",
-    "rails-erb-loader": "^5.5.2"
+    "rails-erb-loader": "^5.5.2",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "esbuild": "^0.13.15",

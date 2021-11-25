@@ -15,5 +15,8 @@ module.exports = {
     'vue',
   ],
   rules: {
+    camelcase: 'off',
+    'max-len': 'off',
+    radix: 'off',
   },
 };
