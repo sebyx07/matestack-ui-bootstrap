@@ -1,13 +1,12 @@
 {
   "name": "matestack-ui-bootstrap-beta",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "license": "MIT",
   "main": "./lib/matestack/ui/bootstrap/index.js",
   "module": "./dist/material-ui-bootstrap.js",
   "scripts": {
     "build": "node build.js",
     "lint": "yarn eslint --fix --ext .js --ext .js lib .eslintrc.js",
-    "publish": "npm publish"
   },
   "files": [
     "dist/**/*.js",
