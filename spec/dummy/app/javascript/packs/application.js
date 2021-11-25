@@ -10,20 +10,17 @@ require("channels")
 import "./stylesheets/application.scss";
 
 import Vue from 'vue/dist/vue.esm'
-import Vuex from 'vuex'
+import 'vuex'
 
 import MatestackUiCore from 'matestack-ui-core';
-import MatestackUiBootstrap from 'matestack-ui-bootstrap';
+import 'matestack-ui-bootstrap';
 
 window.MatestackUiCore = MatestackUiCore // making MatestackUiCore globally available for test compatability
 MatestackUiCore.Vue = Vue // test compatability
 
 
-console.log("fooo")
-let matestackUiApp = undefined
-
 document.addEventListener('DOMContentLoaded', () => {
-  matestackUiApp = new Vue({
+  new Vue({
     el: "#matestack-ui",
     store: MatestackUiCore.store
   })

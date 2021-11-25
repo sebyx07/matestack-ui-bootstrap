@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
   include Utils
 
-  it 'renders basic dropdown' do
+  xit 'renders basic dropdown' do
     matestack_render do
       bs_dropdown
     end
@@ -12,7 +12,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('button.btn.btn-primary.dropdown-toggle')
   end
 
-  it 'has custom button with text' do
+  xit 'has custom button with text' do
     matestack_render do
       bs_dropdown variant: :secondary, text: "Dropdown"
     end
@@ -21,7 +21,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_content('Dropdown')
   end
 
-  it 'has a dropdown menu item' do
+  xit 'has a dropdown menu item' do
     matestack_render do
       bs_dropdown text: "Dropdown", menu: [
         { type: :link, path: "#", text: "Nulla vitae elit" },
@@ -39,7 +39,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('li > hr.dropdown-divider')
   end
 
-  it 'has a block yiel after menu' do
+  xit 'has a block yiel after menu' do
     matestack_render do
       bs_dropdown text: "Dropdown", menu: [
         { type: :link, path: "#", text: "Nulla vitae elit" },
@@ -57,7 +57,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('ul.dropdown-menu.show > p')
   end
 
-  it 'has a custom class for menu' do
+  xit 'has a custom class for menu' do
     matestack_render do
       div attributes: { style: "height: 500px;" } do
         bs_dropdown text: "Dropdown", menu: { items: [
@@ -76,7 +76,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('ul.dropdown-menu.foobar')
   end
 
-  it 'can have a  split button using slot' do
+  xit 'can have a  split button using slot' do
     ExamplePage.define_method(:split_btn) do |*args|
       bs_btn text: "Split Button"
     end
@@ -88,7 +88,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split')
   end
 
-  it 'can have different direction' do
+  xit 'can have different direction' do
     matestack_render do
       bs_dropdown text: "Dropdown", menu: [
         { type: :link, path: "#", text: "Nulla vitae elit" },
@@ -101,7 +101,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_content('Nulla vitae elit')
   end
 
-  it 'can have different alignment' do
+  xit 'can have different alignment' do
     matestack_render do
       bs_dropdown text: "Dropdown", menu: [
         { type: :link, path: "#", text: "Nulla vitae elit" },
@@ -113,7 +113,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_selector('ul.dropdown-menu.dropdown-menu-center')
   end
 
-  it 'can have an offset for menu' do
+  xit 'can have an offset for menu' do
     matestack_render do
       bs_dropdown offset: "10,22", text: "Dropdown"
     end
@@ -122,7 +122,7 @@ describe 'Bootstrap::Components::Dropdown', type: :feature, js: true do
     expect(page).to have_content('Dropdown')
   end
 
-  it 'can have action, transition and onclick components as items' do
+  xit 'can have action, transition and onclick components as items' do
     pending "test for correct link, transition, action and onclick behavior"
     fail
     matestack_render do

@@ -1,23 +1,23 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: postgres
+  host: <%= ENV.fetch("POSTGRES_HOST") { "postgres" } %>
   username: <%= ENV.fetch("POSTGRES_USER") { "postgres" } %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 test:
   <<: *default
-  database: test
+  database: matestack_ui_test
 
 development:
   <<: *default
-  database: development
+  database: matestack_ui_development
 
 staging:
   <<: *default
-  database: staging
+  database: matestack_ui_staging
 
 production:
   <<: *default
-  database: production
+  database: matestack_ui_production

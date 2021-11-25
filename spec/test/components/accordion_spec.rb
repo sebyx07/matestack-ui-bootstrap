@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
   include Utils
 
-  it 'can expand and collapse with multiple elements, all hidden by default' do
+  xit 'can expand and collapse with multiple elements, all hidden by default' do
     matestack_render do
       bs_accordion items: [
         { header: { text: "Group Item #1" }, body: { text: "Random Text for Collapse #1" } },
@@ -26,7 +26,7 @@ RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
     expect(page).to have_selector('.accordion > .accordion-item > .accordion-collapse > .accordion-body', text: "Random Text for Collapse #2", visible: true)
   end
 
-  it 'can expand and collapse with multiple elements, all shown when open true' do
+  xit 'can expand and collapse with multiple elements, all shown when open true' do
     matestack_render do
       bs_accordion open: true, items: [
         { header: { text: "Group Item #1" }, body: { text: "Random Text for Collapse #1" } },
@@ -40,7 +40,7 @@ RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
     expect(page).to have_selector('.accordion > .accordion-item > .accordion-collapse > .accordion-body', text: "Random Text for Collapse #2", visible: true)
   end
 
-  it 'can expand and collapse with multiple elements, only specified items are shown initially' do
+  xit 'can expand and collapse with multiple elements, only specified items are shown initially' do
     matestack_render do
       bs_accordion items: [
         { header: { text: "Group Item #1" }, body: { text: "Random Text for Collapse #1" }, open: true },
@@ -54,7 +54,7 @@ RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
     expect(page).to have_selector('.accordion > .accordion-item > .accordion-collapse > .accordion-body', text: "Random Text for Collapse #2", visible: false)
   end
 
-  it 'can render in flush variant' do
+  xit 'can render in flush variant' do
     matestack_render do
       bs_accordion variant: :flush, items: [
         { header: { text: "Group Item #1" }, body: { text: "Random Text for Collapse #1" }, open: true },
@@ -65,7 +65,7 @@ RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
     expect(page).to have_selector('.accordion.accordion-flush')
   end
 
-  it 'item header can have custom class' do
+  xit 'item header can have custom class' do
     matestack_render do
       bs_accordion items: [
         { header: { text: "Group Item #2", class: "foobar" }, body: { text: "Random Text for Collapse #2" } },
@@ -75,7 +75,7 @@ RSpec.describe "Bootstrap::Components::Accordion", type: :feature, js: true do
     expect(page).to have_selector('.accordion > .accordion-item > .accordion-header.foobar > .accordion-button', text: "Group Item #2", visible: true)
   end
 
-  it 'item body can have custom class' do
+  xit 'item body can have custom class' do
     matestack_render do
       bs_accordion items: [
         { header: { text: "Group Item #2" }, body: { text: "Random Text for Collapse #2", class: "foobar" } },

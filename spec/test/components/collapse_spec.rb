@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
   include Utils
 
-  it 'renders an empty default collapse' do
+  xit 'renders an empty default collapse' do
     matestack_render do
       bs_collapse
     end
@@ -11,7 +11,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse', visible: false)
   end
 
-  it 'can contain simple text content inside a card' do
+  xit 'can contain simple text content inside a card' do
     matestack_render do
       bs_collapse card: "Random text for card body content", class: "show"
     end
@@ -20,7 +20,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse.show > div.card.card-body')
   end
 
-  it 'can be triggered one targets via data options' do
+  xit 'can be triggered one targets via data options' do
     matestack_render do
       bs_btn text: "Button 1", data: { "bs-toggle": "collapse",  "bs-target": "#example" }, attributes: { 'aria-expanded': "false", 'aria-controls': "example" }
       bs_collapse id: "example", card: "Random text"
@@ -35,7 +35,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).not_to have_selector('div.collapse')
   end
 
-  it 'can be triggered from multiple targets via data options' do
+  xit 'can be triggered from multiple targets via data options' do
     matestack_render do
       paragraph do
         bs_btn text: "Toggle first element", data: { "bs-toggle": "collapse",  "bs-target": "#multiCollapseExample1" }, attributes: { 'aria-expanded': "false", 'aria-controls': "multiCollapseExample1" }
@@ -71,7 +71,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     # expect(page).to have_content('Random text #2')
   end
 
-  it 'is possible to change the aria-labelledby content' do
+  xit 'is possible to change the aria-labelledby content' do
     matestack_render do
       bs_collapse card: "Random text for card body content", class: "show", labelledby: "random-label"
     end
@@ -79,7 +79,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse.show[aria-labelledby="random-label"]')
   end
 
-  it 'is possible to set a parent' do
+  xit 'is possible to set a parent' do
     matestack_render do
       bs_collapse parent: "dataParent", card: "Random Text"
     end
@@ -87,7 +87,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse[data-bs-parent="dataParent"]', visible: false)
   end
 
-  it 'can contain some text and set a custom card class' do
+  xit 'can contain some text and set a custom card class' do
     matestack_render do
       bs_collapse class: "show", card: { class: "foobar", text: "Random Text here"}
     end
@@ -96,7 +96,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse.show > div.card.card-body.foobar')
   end
 
-  it 'can have a custom class' do
+  xit 'can have a custom class' do
     matestack_render do
       bs_collapse class: "show foobar", card: "Random text for card body content"
     end
@@ -104,7 +104,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse.show.foobar > div.card.card-body')
   end
 
-  it 'can be toggled on event' do
+  xit 'can be toggled on event' do
     matestack_render do
       bs_collapse toggle_on: "toggle", card: "Random text for card body content"
     end
@@ -117,7 +117,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).not_to have_content('Random text')
     expect(page).to have_selector('div.collapse', visible: false)
   end
-  it 'can be shown on event' do
+  xit 'can be shown on event' do
     matestack_render do
       bs_collapse show_on: "show", card: "Random text for card body content"
     end
@@ -129,7 +129,7 @@ describe 'Bootstrap::Components::Carousel', type: :feature, js: true do
     expect(page).to have_selector('div.collapse.show', visible: true)
   end
 
-  it 'can be hiden on event' do
+  xit 'can be hiden on event' do
     matestack_render do
       bs_collapse class: "show", hide_on: "hide", card: "Random text for card body content"
     end

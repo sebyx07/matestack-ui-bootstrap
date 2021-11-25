@@ -18,7 +18,7 @@ RSpec.describe "Nested Form Support Spec", type: :feature, js: true do
     allow_any_instance_of(FormTestController).to receive(:expect_params)
   end
 
-  it 'properly renders all input components with dynamically adjusted IDs' do
+  xit 'properly renders all input components with dynamically adjusted IDs' do
     form_config = get_form_config(path: nested_form_support_spec_input_success_form_test_path)
 
     ExamplePage.define_method(:order_item_form) do |order_item = OrderItem.new|

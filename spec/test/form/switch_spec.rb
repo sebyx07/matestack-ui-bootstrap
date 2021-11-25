@@ -18,7 +18,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     allow_any_instance_of(FormTestController).to receive(:expect_params)
   end
 
-  it 'renders single bootstrap switch button, simply submitting sends :false' do
+  xit 'renders single bootstrap switch button, simply submitting sends :false' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -36,7 +36,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
 
   end
 
-  it 'renders single bootstrap switch button, clicking button and submitting sends :true' do
+  xit 'renders single bootstrap switch button, clicking button and submitting sends :true' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -56,7 +56,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
 
   end
 
-  it 'renders single bootstrap switch button, clicking it twice submits :false again it' do
+  xit 'renders single bootstrap switch button, clicking it twice submits :false again it' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -76,7 +76,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap switch button with options as Array' do
+  xit 'renders bootstrap switch button with options as Array' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -96,7 +96,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap switch button with options as Hash' do
+  xit 'renders bootstrap switch button with options as Hash' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -117,7 +117,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
 
   end
 
-  it 'renders bootstrap switch button with options as Array, clicking multiple options' do
+  xit 'renders bootstrap switch button with options as Array, clicking multiple options' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -138,7 +138,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap switch button with options as Hash, clicking multiple options' do
+  xit 'renders bootstrap switch button with options as Hash, clicking multiple options' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -159,7 +159,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap switch button with server errors' do
+  xit 'renders bootstrap switch button with server errors' do
     form_config = get_form_config(path: switch_failure_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -177,7 +177,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//div//div[contains(@class, "invalid-feedback") and contains(text(), "is invalid")]')
   end
 
-  it 'renders bootstrap switch button with additional custom class' do
+  xit 'renders bootstrap switch button with additional custom class' do
 
     # add additional custom class to bootstrap switch
     form_config = get_form_config(path: switch_success_form_test_path)
@@ -193,7 +193,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//input[@id="foo_2" and contains(@class, "some-class")]')
   end
 
-  it 'renders disabled bootstrap switch buttons' do
+  xit 'renders disabled bootstrap switch buttons' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -206,7 +206,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//input[@id="foo_2" and @disabled="disabled"]')
   end
 
-  it 'renders bootstrap switch button with label' do
+  xit 'renders bootstrap switch button with label' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -218,7 +218,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//label[@for="foo" and @class="form-label" and contains(text(), "Some label")]')
   end
 
-  it 'renders bootstrap switch button with form text' do
+  xit 'renders bootstrap switch button with form text' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -230,7 +230,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//div[contains(@class, "form-text-for-foo") and contains(@class, "form-text") and contains(text(), "some notes")]')
   end
 
-  it 'renders bootstrap switch button as inline variant' do
+  xit 'renders bootstrap switch button as inline variant' do
     form_config = get_form_config(path: switch_success_form_test_path)
     matestack_render do
       matestack_form form_config do

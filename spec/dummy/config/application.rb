@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 require "matestack/ui/bootstrap"
+Dotenv::Railtie.load
 
 module Dummy
   class Application < Rails::Application

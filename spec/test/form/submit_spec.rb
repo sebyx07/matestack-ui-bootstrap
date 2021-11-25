@@ -18,7 +18,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     allow_any_instance_of(FormTestController).to receive(:expect_params)
   end
 
-  it 'renders a submit button with default classes & text' do
+  xit 'renders a submit button with default classes & text' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
       matestack_form form_config do
@@ -31,7 +31,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     expect(page).to have_xpath('//form//button[@type="submit" and contains(text(), "Loading")]')
   end
 
-  it 'renders a submit button with custom text and loading_text' do
+  xit 'renders a submit button with custom text and loading_text' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
       matestack_form form_config do
@@ -44,7 +44,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     expect(page).to have_xpath('//form//button[@type="submit" and contains(text(), "Getting submitted")]')
   end
 
-  it 'renders a submit button with default text & non-default button_variant and spinner_variant' do
+  xit 'renders a submit button with default text & non-default button_variant and spinner_variant' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
       matestack_form form_config do
@@ -57,7 +57,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     expect(page).to have_xpath('//form//button[@type="submit" and contains(@class, "btn btn-light") and contains(text(), "Loading")]')
   end
 
-  it 'renders a submit button with default text & non-default button size' do
+  xit 'renders a submit button with default text & non-default button size' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
       matestack_form form_config do
@@ -70,7 +70,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     expect(page).to have_xpath('//form//button[@type="submit" and contains(@class, "btn btn-primary btn-lg") and contains(text(), "Loading")]')
   end
 
-  it 'renders a submit button with non-default text,loading_text, button_variant, spinner_variant and size' do
+  xit 'renders a submit button with non-default text,loading_text, button_variant, spinner_variant and size' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
         matestack_form form_config do
@@ -83,7 +83,7 @@ RSpec.describe "Bootstrap::Form::Submit", type: :feature, js: true do
     expect(page).to have_xpath('//form//button[@type="submit" and contains(@class, "btn btn-light btn-lg") and contains(text(), "Getting submitted")]')
   end
 
-  it 'renders a submit button with non-default [text,loading_text, button_variant, spinner_variant, size] and additional class&loading_class' do
+  xit 'renders a submit button with non-default [text,loading_text, button_variant, spinner_variant, size] and additional class&loading_class' do
     form_config = get_form_config(path: delayed_success_submit_path)
     matestack_render do
       matestack_form form_config do

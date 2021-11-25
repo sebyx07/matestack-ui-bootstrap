@@ -18,7 +18,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     allow_any_instance_of(FormTestController).to receive(:expect_params)
   end
 
-  it 'renders bootstrap select field with options as Array' do
+  xit 'renders bootstrap select field with options as Array' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -37,7 +37,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap select field with options as Hash' do
+  xit 'renders bootstrap select field with options as Hash' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -56,7 +56,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     click_button "Submit"
   end
 
-  it 'renders bootstrap select field with server errors' do
+  xit 'renders bootstrap select field with server errors' do
     form_config = get_form_config(path: select_failure_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -74,7 +74,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//div[contains(@class, "invalid-feedback") and contains(text(), "is invalid")]')
   end
 
-  it 'renders bootstrap select field with additional custom class' do
+  xit 'renders bootstrap select field with additional custom class' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -86,7 +86,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//div[@class="matestack-ui-bootstrap-form-select"]//select[@id="foo" and contains(@class, "form-select") and contains(@class, "some-class")]')
   end
 
-  it 'renders bootstrap select field with label' do
+  xit 'renders bootstrap select field with label' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -98,7 +98,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//label[@for="foo" and @class="form-label" and contains(text(), "Some label")]')
   end
 
-  it 'renders bootstrap select field with disabled placeholder option' do
+  xit 'renders bootstrap select field with disabled placeholder option' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do
@@ -110,7 +110,7 @@ RSpec.describe "Bootstrap::Form::Input", type: :feature, js: true do
     expect(page).to have_xpath('//form//div[@class="matestack-ui-bootstrap-form-select"]//select[@id="foo" and contains(@class, "form-select")]//option[@disabled="disabled" and contains(text(), "select!")]')
   end
 
-  it 'renders basic bootstrap input field with form text' do
+  xit 'renders basic bootstrap input field with form text' do
     form_config = get_form_config(path: select_success_form_test_path)
     matestack_render do
       matestack_form form_config do

@@ -11,14 +11,14 @@ describe 'Bootstrap::Components::Breadcrumb', type: :feature, js: true do
     ]
   end
 
-  it 'is possible to set a custom class' do
+  xit 'is possible to set a custom class' do
     matestack_render { bs_breadcrumb class: 'custom', items: items }
     visit example_path
     expect(page).to have_selector('nav[aria-label=breadcrumb]')
     expect(page).to have_selector('ol.breadcrumb.custom')
   end
 
-  it 'renders breadcrumb with transition' do
+  xit 'renders breadcrumb with transition' do
     matestack_render do
       bs_breadcrumb items: items
     end
@@ -30,7 +30,7 @@ describe 'Bootstrap::Components::Breadcrumb', type: :feature, js: true do
     end
   end
 
-  it 'renders breadcrumb with link' do
+  xit 'renders breadcrumb with link' do
     matestack_render do
       bs_breadcrumb items: items
     end
@@ -41,7 +41,7 @@ describe 'Bootstrap::Components::Breadcrumb', type: :feature, js: true do
     end
   end
 
-  it 'is possible to render a block inside a breadcrumb' do
+  xit 'is possible to render a block inside a breadcrumb' do
     matestack_render do
       bs_breadcrumb do
         paragraph text: 'Custom content'
@@ -54,13 +54,13 @@ describe 'Bootstrap::Components::Breadcrumb', type: :feature, js: true do
     expect(page).to have_selector('p', text: 'Custom content')
   end
 
-  it 'is possible to add a nav class' do
+  xit 'is possible to add a nav class' do
     matestack_render { bs_breadcrumb nav_class: 'custom classes', items: items }
     visit example_path
     expect(page).to have_selector('nav.custom.classes[aria-label=breadcrumb]')
   end
 
-  it 'can be used with items and a block' do
+  xit 'can be used with items and a block' do
     matestack_render do
       bs_breadcrumb items: [{ path: 'test', text: 'Test'}] do
         paragraph text: 'Custom content'

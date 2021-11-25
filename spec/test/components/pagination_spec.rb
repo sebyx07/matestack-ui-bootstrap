@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
   include Utils
 
-  it 'renders basic pagination' do
+  xit 'renders basic pagination' do
     matestack_render do
       bs_pagination
     end
@@ -11,7 +11,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('nav > ul.pagination', visible: false)
   end
 
-  it 'can render pagination from item list with active item' do
+  xit 'can render pagination from item list with active item' do
     matestack_render do
       bs_pagination items: [
         { type: :link, path: "#", text: "1", active: false },
@@ -26,7 +26,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('a.page-link')
   end
 
-  it 'can have custom content given in a block' do
+  xit 'can have custom content given in a block' do
     matestack_render do
       bs_pagination do
         plain "Test Block"
@@ -38,7 +38,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_content('Test Block')
   end
 
-  it 'renders the block after the item list' do
+  xit 'renders the block after the item list' do
     matestack_render do
       bs_pagination items: [
         { type: :link, path: "#", text: "1", active: false },
@@ -54,7 +54,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_content('Test Block')
   end
 
-  it 'can have different sizes' do
+  xit 'can have different sizes' do
     matestack_render do
       bs_pagination items: [
         { type: :link, path: "#", text: "1", active: false },
@@ -66,7 +66,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('a.page-link')
   end
 
-  it 'has a custom aria_label' do
+  xit 'has a custom aria_label' do
     matestack_render do
       bs_pagination items: [
         { type: :link, path: "#", text: "1", active: false },

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::Scrollspy", type: :feature, js: true do
   include Utils
 
-  it 'with basic elements' do
+  xit 'with basic elements' do
     matestack_render do
       bs_row class: "m-3" do
         bs_col lg: 4 do
@@ -39,7 +39,7 @@ RSpec.describe "Bootstrap::Components::Scrollspy", type: :feature, js: true do
     expect(page).to have_selector('h2', text: "Item 2", visible: true)
   end
 
-  it 'can have custom method' do
+  xit 'can have custom method' do
     matestack_render do
       bs_scrollspy height: 200, method: "foobar"
     end
@@ -47,7 +47,7 @@ RSpec.describe "Bootstrap::Components::Scrollspy", type: :feature, js: true do
     expect(page).to have_selector('div[data-bs-method="foobar"]', visible: false)
   end
 
-  it 'can have an offset' do
+  xit 'can have an offset' do
     matestack_render do
       bs_scrollspy height: 200, offset: 100
     end
@@ -55,7 +55,7 @@ RSpec.describe "Bootstrap::Components::Scrollspy", type: :feature, js: true do
     expect(page).to have_selector('div[data-bs-offset="100"]', visible: false)
   end
 
-  it 'can have custom class' do
+  xit 'can have custom class' do
     matestack_render do
       bs_scrollspy height: 200, class: "foo bar"
     end

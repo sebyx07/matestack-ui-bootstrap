@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
   include Utils
 
-  it 'renders a default popover' do
+  xit 'renders a default popover' do
     matestack_render { bs_popover }
     visit example_path
     expect(page).to have_selector('button.btn[data-bs-toggle="popover"]')
   end
 
-  it 'has text and content' do
+  xit 'has text and content' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content"
     }
@@ -21,7 +21,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_content('Pop Content')
   end
 
-  it 'has different tag' do
+  xit 'has different tag' do
     matestack_render {
       [:a, :span, :div].each do |type|
         bs_popover text: "Popover", content: "Pop Content", tag: type
@@ -33,7 +33,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('span[data-bs-toggle="popover"]')
   end
 
-  it 'can popup in different direction' do
+  xit 'can popup in different direction' do
     matestack_render {
       [:top, :bottom, :left, :right].each do |direction|
         bs_popover text: "Popover", content: "Pop Content", placement: direction
@@ -46,7 +46,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('button.btn[data-bs-placement="right"]')
   end
 
-  it 'can dismiss on next click' do
+  xit 'can dismiss on next click' do
     matestack_render {
       bs_btn text: "Random Button"
       bs_popover text: "Popover", content: "Pop Content", trigger: :focus
@@ -59,7 +59,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).not_to have_content('Pop Content')
   end
 
-  it 'has animation' do
+  xit 'has animation' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content", animation: 'true'
     }
@@ -67,7 +67,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('button.btn[data-bs-animation="true"]')
   end
 
-  it 'content has title' do
+  xit 'content has title' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content", title: "Popover Title"
     }
@@ -77,7 +77,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_content('Popover Title')
   end
 
-  it 'can have different variant' do
+  xit 'can have different variant' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content", variant: :secondary
     }
@@ -85,7 +85,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('.btn-secondary')
   end
 
-  it 'can has a delay' do
+  xit 'can has a delay' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content", delay: "3000"
     }
@@ -96,7 +96,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_content('Pop Content', wait: 5)
   end
 
-  it 'can has html attributes' do
+  xit 'can has html attributes' do
     matestack_render {
       bs_popover text: "Popover", html: 'true', content: "<p>this paragraph in popover</p>"
     }
@@ -107,7 +107,7 @@ RSpec.describe "Bootstrap::Components::Pagination", type: :feature, js: true do
     expect(page).to have_selector('div.popover-body > p')
   end
 
-  it 'can has an offset' do
+  xit 'can has an offset' do
     matestack_render {
       bs_popover text: "Popover", content: "Pop Content", offset: "20"
     }

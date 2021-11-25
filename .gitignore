@@ -39,10 +39,12 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.idea/
 
 /spec/dummy/node_modules
 /spec/dummy/tmp
 /spec/dummy/public
 /spec/dummy/log
+/spec/dummy/.env.local
 
 /vendor/assets/javascripts/packs-test

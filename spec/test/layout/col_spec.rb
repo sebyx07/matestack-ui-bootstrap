@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Bootstrap::Components::Col', type: :feature, js: true do
   include Utils
 
-  it 'renders default column' do
+  xit 'renders default column' do
     matestack_render do
       bs_row do
         bs_col do
@@ -18,7 +18,7 @@ describe 'Bootstrap::Components::Col', type: :feature, js: true do
     expect(page).to have_selector('div.col')
   end
 
-  it 'renders column with breakpoints & alignment' do
+  xit 'renders column with breakpoints & alignment' do
     matestack_render do
       bs_row do
         bs_col default: 12, lg: 4, align_self: :center do
@@ -34,7 +34,7 @@ describe 'Bootstrap::Components::Col', type: :feature, js: true do
     expect(page).to have_selector('div.col-12.col-md-6.align-self-start')
   end
 
-  it 'renders column with order & offset' do
+  xit 'renders column with order & offset' do
     matestack_render do
       bs_row do
         bs_col sm: 12, md: 4, lg: 4 do

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
   include Utils
 
-  it 'can wrap other elements as span and shows text message on hover by default' do
+  xit 'can wrap other elements as span and shows text message on hover by default' do
     matestack_render do
       bs_tooltip tooltip_title: "Help Message" do
         action method: :post, path: root_path do
@@ -22,7 +22,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('div.tooltip', text: 'Help Message')
   end
 
-  it 'can wrap other elements as div and shows text message on hover by default' do
+  xit 'can wrap other elements as div and shows text message on hover by default' do
     matestack_render do
       bs_tooltip tag: :div, tooltip_title: "Help Message" do
         action method: :post, path: root_path do
@@ -41,7 +41,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('div.tooltip', text: 'Help Message')
   end
 
-  it 'appears with a button and a text message on click' do
+  xit 'appears with a button and a text message on click' do
     matestack_render do
       bs_tooltip tooltip_title: "Help Message", trigger: "click" do
         action method: :post, path: root_path do
@@ -63,7 +63,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('div.tooltip', text: 'Help Message')
   end
 
-  it 'can have different direction' do
+  xit 'can have different direction' do
     matestack_render do
       bs_tooltip tooltip_title: "Help Message", placement: :top do
         action method: :post, path: root_path do
@@ -75,7 +75,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('span[data-bs-placement="top"]')
   end
 
-  it 'can have custom HTML added' do
+  xit 'can have custom HTML added' do
     matestack_render do
       bs_tooltip tooltip_title: "<em>Tooltip</em> <u>with</u> <b>HTML</b>", html: 'true' do
         action method: :post, path: root_path do
@@ -89,7 +89,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_content('Tooltip with HTML')
   end
 
-  it 'can have a custom delay' do
+  xit 'can have a custom delay' do
     matestack_render do
       bs_tooltip tooltip_title: "Message", delay: 3000 do
         action method: :post, path: root_path do
@@ -105,7 +105,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_content('Message', wait: 3)
   end
 
-  it 'can have an offset' do
+  xit 'can have an offset' do
     matestack_render do
       bs_tooltip tooltip_title: "Message", offset: 100 do
         action method: :post, path: root_path do
@@ -117,7 +117,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('span[data-bs-offset="100"]')
   end
 
-  it 'can have different trigger' do
+  xit 'can have different trigger' do
     matestack_render do
       bs_tooltip tooltip_title: "Message", trigger: 'hover focus' do
         action method: :post, path: root_path do
@@ -129,7 +129,7 @@ RSpec.describe "Bootstrap::Components::Tooltip", type: :feature, js: true do
     expect(page).to have_selector('span[data-bs-trigger="hover focus"]')
   end
 
-  it 'doesnt have animation' do
+  xit 'doesnt have animation' do
     matestack_render do
       bs_tooltip tooltip_title: "Message", animation: 'false' do
         action method: :post, path: root_path do

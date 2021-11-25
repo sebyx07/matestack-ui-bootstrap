@@ -27,17 +27,17 @@ gem 'rspec-rails', '~> 4.0.2'
 gem 'capybara'
 gem 'webpacker', '~> 5.0'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'selenium-webdriver'
 gem 'puma'
 gem 'simplecov', require: false, group: :test
 gem 'byebug'
 gem 'webmock'
 gem 'redis'
-
+gem 'dotenv-rails'
 group :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem "generator_spec"
   gem "rspec-retry" # repeating flaky tests
   gem "rspec-wait"
+  gem 'cuprite'
 end

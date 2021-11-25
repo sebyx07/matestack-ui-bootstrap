@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Bootstrap::Components::Card', type: :feature, js: true do
   include Utils
 
-  it 'has title and body text' do
+  xit 'has title and body text' do
     matestack_render do
       bs_card title: "Card title", body: "Some quick example text"
     end
@@ -12,7 +12,7 @@ describe 'Bootstrap::Components::Card', type: :feature, js: true do
     expect(page).to have_content'Some quick example text'
   end
 
-  it 'has a card header and card footer' do
+  xit 'has a card header and card footer' do
     matestack_render do
       bs_card title: "Card title", body: "Some quick example text",
       header: "Card header", footer: "card footer"
@@ -24,7 +24,7 @@ describe 'Bootstrap::Components::Card', type: :feature, js: true do
     expect(page).to have_content'card footer'
   end
 
-  it 'has a custom header and footer implemented with slots option' do
+  xit 'has a custom header and footer implemented with slots option' do
     ExamplePage.define_method(:header_slot) do |*args|
       bs_btn text: "Title Button"
     end
@@ -46,7 +46,7 @@ describe 'Bootstrap::Components::Card', type: :feature, js: true do
     expect(page).to have_content('2 days ago')
   end
 
-  it 'has an image above the body text' do
+  xit 'has an image above the body text' do
     matestack_render do
       bs_card title: "Card title", body: "Some quick example text",
             img_path: image_url("matestack-teaser.png")
@@ -56,7 +56,7 @@ describe 'Bootstrap::Components::Card', type: :feature, js: true do
     expect(page).to have_selector("img[src*='matestack-teaser']")
   end
 
-  it 'has only custom body component' do
+  xit 'has only custom body component' do
     matestack_render do
       bs_card title: "Card title", body: "Some quick example text" do
         div class: "p-3" do
@@ -73,7 +73,7 @@ describe 'Bootstrap::Components::Card', type: :feature, js: true do
     expect(page).not_to have_selector('div.card-footer')
   end
 
-  it 'has a custom body implemented with slots option' do
+  xit 'has a custom body implemented with slots option' do
     ExamplePage.define_method(:body_slot) do |*args|
       ul class: 'list-group list-group-flush' do
         li class: "list-group-item" do plain "Item 1" end

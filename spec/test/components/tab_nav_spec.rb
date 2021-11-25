@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
   include Utils
 
-  it 'renders tab nav with pills' do
+  xit 'renders tab nav with pills' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -45,7 +45,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('.tab-content > #tab-b-content.tab-pane.fade', text: "B", visible: false)
   end
 
-  it 'renders tab nav with tabs' do
+  xit 'renders tab nav with tabs' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -88,7 +88,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
   end
 
 
-  it 'can align horizontally' do
+  xit 'can align horizontally' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -112,7 +112,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.justify-content-center')
   end
 
-  it 'can stack vertically' do
+  xit 'can stack vertically' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -136,7 +136,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.flex-column')
   end
 
-  it 'has elements with equals width' do
+  xit 'has elements with equals width' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -160,7 +160,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.nav-justified')
   end
 
-  it 'has elements that proportionately fill all available space' do
+  xit 'has elements that proportionately fill all available space' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -184,7 +184,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.nav-fill')
   end
 
-  it 'can have custom class' do
+  xit 'can have custom class' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -208,7 +208,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.foobar')
   end
 
-  it 'can be set to vertical_up_to_sm' do
+  xit 'can be set to vertical_up_to_sm' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -232,7 +232,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.flex-column.flex-sm-column.flex-md-row')
   end
 
-  it 'can be set to vertical_up_to_md' do
+  xit 'can be set to vertical_up_to_md' do
     tab_nav_config = {
       id: "navigation",
       items: [
@@ -256,7 +256,7 @@ RSpec.describe "Bootstrap::Components::TabNav", type: :feature, js: true do
     expect(page).to have_selector('ul.nav.flex-column.flex-sm-column.flex-md-column.flex-lg-row')
   end
 
-  it 'can be set to vertical_up_to_xl' do
+  xit 'can be set to vertical_up_to_xl' do
     tab_nav_config = {
       id: "navigation",
       items: [

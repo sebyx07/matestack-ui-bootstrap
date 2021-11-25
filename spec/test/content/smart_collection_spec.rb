@@ -18,7 +18,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     end
   end
 
-  it 'ActiveRecord collection rendered as plain table' do
+  xit 'ActiveRecord collection rendered as plain table' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.all,
@@ -46,7 +46,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).not_to have_selector('.smart-collection-filter')
   end
 
-  it 'customizable ActiveRecord collection rendered as plain table' do
+  xit 'customizable ActiveRecord collection rendered as plain table' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.where(first_name: "first_name 1"),
@@ -74,7 +74,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).not_to have_selector('.smart-collection-filter')
   end
 
-  it 'paginated ActiveRecord collection rendered as table without any actions' do
+  xit 'paginated ActiveRecord collection rendered as table without any actions' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.all,
@@ -124,7 +124,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).not_to have_selector('.smart-collection-filter')
   end
 
-  it 'paginated, customizable ActiveRecord collection rendered as table without any actions' do
+  xit 'paginated, customizable ActiveRecord collection rendered as table without any actions' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.where("(postal_code)::int > ?", 10),
@@ -174,7 +174,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).not_to have_selector('.smart-collection-filter')
   end
 
-  it 'paginated, filterable ActiveRecord collection rendered as table without any actions' do
+  xit 'paginated, filterable ActiveRecord collection rendered as table without any actions' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.where("(postal_code)::int > ?", 10),
@@ -209,7 +209,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('.current-pagination-state > small', text: "showing 1 to 1 of 1 (8 hidden by filter)")
   end
 
-  it 'paginated, filterable customized ActiveRecord collection rendered as table without any actions' do
+  xit 'paginated, filterable customized ActiveRecord collection rendered as table without any actions' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.all,
@@ -244,7 +244,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('.current-pagination-state > small', text: "showing 1 to 1 of 1 (19 hidden by filter)")
   end
 
-  it 'paginated, filterable ActiveRecord collection rendered as table actions provided by slot' do
+  xit 'paginated, filterable ActiveRecord collection rendered as table actions provided by slot' do
     ExamplePage.define_method(:table_item_actions) do |customer|
       transition path: edit_dummy_customer_path(customer), delay: 300 do
         bs_btn outline: true, size: :sm, variant: :primary, class: "m-1" do
@@ -307,7 +307,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('tr.align-middle > td.text-end > a > button.btn.btn-outline-danger.btn-sm.m-1 > svg', count: 10)
   end
 
-  it 'paginated, filterable ActiveRecord collection rendered as table with customizable column heading and content rendering' do
+  xit 'paginated, filterable ActiveRecord collection rendered as table with customizable column heading and content rendering' do
     collection_config = {
       id: 'customer-collection',
       items: Customer.all,
@@ -345,7 +345,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('tr.align-middle > td.text-end', text: "l.", count: 10)
   end
 
-  it 'paginated, filterable ActiveRecord collection rendered via custom method provided by slot' do
+  xit 'paginated, filterable ActiveRecord collection rendered via custom method provided by slot' do
     ExamplePage.define_method(:collection_rendering) do |customers|
       bs_row do
         customers.each do |customer|
@@ -414,7 +414,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
 
   end
 
-  it 'ActiveRecord collection with custom rendering per column' do
+  xit 'ActiveRecord collection with custom rendering per column' do
     ExamplePage.define_method(:collection_config) do
       {
         id: 'customer-collection',
@@ -445,7 +445,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('tr > td > span.badge', count: 10)
   end
 
-  it 'paginated, filterable ActiveRecord collection with access to row object instance in column format proc' do
+  xit 'paginated, filterable ActiveRecord collection with access to row object instance in column format proc' do
     ExamplePage.define_method(:collection_config) do
       {
         id: 'customer-collection',
@@ -470,7 +470,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('tr > td', text: "last_name 1 Access")
   end
 
-  it 'ActiveRecord collection with custom rendering per column with access to row object instance' do
+  xit 'ActiveRecord collection with custom rendering per column with access to row object instance' do
     ExamplePage.define_method(:collection_config) do
       {
         id: 'customer-collection',
@@ -501,7 +501,7 @@ RSpec.describe "Bootstrap::Content::SmartCollection", type: :feature, js: true d
     expect(page).to have_selector('tr > td > span.badge', count: 10)
   end
 
-  it 'ActiveRecord collection with access to same row object/attributes in multiple columns' do
+  xit 'ActiveRecord collection with access to same row object/attributes in multiple columns' do
     ExamplePage.define_method(:collection_config) do
       {
         id: 'customer-collection',
