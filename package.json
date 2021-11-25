@@ -1,6 +1,6 @@
 {
   "name": "matestack-ui-bootstrap-beta",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "license": "MIT",
   "main": "./lib/matestack/ui/bootstrap/index.js",
   "module": "./dist/material-ui-bootstrap.js",

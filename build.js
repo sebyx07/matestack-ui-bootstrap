@@ -5,6 +5,10 @@ require('esbuild').build({
   plugins: [sassPlugin()],
   bundle: true,
   outfile: 'dist/material-ui-bootstrap.js',
-  minify: true,
-  format: 'esm'
+  minify: false,
+  external: [
+    'matestack-ui-core',
+    'vue/dist/vue.esm',
+    'bootstrap'
+  ]
 }).catch(() => process.exit(1))
